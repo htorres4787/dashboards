@@ -35,6 +35,10 @@ RSpec.configure do |config|
     stub_request(:get, /api.exchangerate.host\/convert/).
       with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
       to_return(status: 200, body: cup_to_svc, headers: {})
+
+    stub_request(:get, /api.exchangerate.host\/latest/).
+      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      to_return(status: 200, body: cup_to_svc, headers: {})
   end
 end
 
